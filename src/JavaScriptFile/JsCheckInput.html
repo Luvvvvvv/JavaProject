@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检查输入</title>
+    <script>
+        function myFunction(){
+            var x=document.getElementById("num").value;
+            if (x==""||isNaN(x)){
+                alert("It's not a number")
+            } else window.alert("It's a number")
+        }
+    </script>
+</head>
+<body>
+<p>Input a value</p>
+<input id="num" type="text">
+<button style="width: 200px;height: 30px" onclick="myFunction()">click here to check</button>
+</body>
+</html>
