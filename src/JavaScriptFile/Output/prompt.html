@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>push button to view the message</p>
+<button type="button" onclick="prompt1()"></button>
+<p id="txt"></p>
+<script>
+    function prompt1() {
+        var x;
+        var name = prompt("plz input your name", "luv");
+        if (name != null || name != "") {
+            x = "hello!" + name + ",how are you feeling today"
+            document.getElementById("txt").innerHTML = x;
+        }
+    }
+</script>
+</body>
+</html>

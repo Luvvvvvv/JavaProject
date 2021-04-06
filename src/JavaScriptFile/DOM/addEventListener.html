@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>display time</p>
+<button id="btn"></button>
+<button id="btn2"></button>
+<p id="time"></p>
+<script>
+    x1 = document.getElementById("btn");
+    x2 = document.getElementById("btn2");
+    x1.addEventListener("click", displayDate);
+    x2.addEventListener("click", warning);
+    x2.addEventListener("click", warning2);
+
+    function displayDate() {
+        document.getElementById("time").innerHTML = Date();
+    }
+
+    function warning() {
+        alert("wrong")
+    }
+
+    function warning2() {
+        alert("done")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function myFunction() {
+            var x, txt;
+            x = document.getElementById("num").value;
+            if (isNaN(x) || x < 1 || x > 10) {
+                txt = "wrong"
+            } else txt = "correct"
+            document.getElementById("test").innerHTML = txt;
+        }
+    </script>
+</head>
+<body>
+<p>check here</p>
+<input id="num">
+<button type="button" onclick="myFunction()">submit</button>
+<p id="test">123</p>
+</body>
+</html>

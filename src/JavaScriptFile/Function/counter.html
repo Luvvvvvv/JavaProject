@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="count">0</p>
+<button type="button" onclick="counter()">click to count</button>
+<script>
+    var add = (function () {
+        var count1 = 0;
+        return function () {
+            return count1 += 1;
+        }
+    })();
+
+    function counter() {
+        document.getElementById("count").innerHTML = add();
+    }
+</script>
+</body>
+</html>

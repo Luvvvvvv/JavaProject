@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="txt" onmousedown="mdown(this)" onmouseup="mup(this)"
+     style="width: 100px;height: 100px;background-color: #F38A42">
+    click
+</div>
+<script>
+    function mdown(o) {
+        document.getElementById("txt").innerHTML = "123"
+    }
+
+    function mup() {
+        document.getElementById("txt").innerHTML = "231"
+    }
+</script>
+</body>
+</html>

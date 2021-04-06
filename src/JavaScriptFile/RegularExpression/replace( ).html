@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function myFunction() {
+            var str = document.getElementById("modify").innerHTML;
+            var txt = str.replace("Microsoft", "new");
+            document.getElementById("modify").innerHTML = txt;
+        }
+    </script>
+</head>
+<body>
+<p id="modify">Microsoft is good！</p>
+<button onclick="myFunction()">click here</button>
+</body>
+</html>
