@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1 {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .b2 {
+            height: 200px;
+            background-color: lightgreen;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById("box");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                // //性能差
+                // box.style.width = "200px";
+                // box.style.height = "200px";
+                // box.style.backgroundColor = "yellow";
+
+                //修改class属性
+                // box.className += " b2";
+                addClass(box, "b2");
+            };
+
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function () {
+                removeClass(box, "b2");
+            };
+
+            var btn03 = document.getElementById("btn03");
+            btn03.onclick = function () {
+                toggleClass(box, "b2");
+            };
+        };
+        //obj要添加的class属性的元素
+        //cn要添加的class
+        function addClass(obj, cn) {
+            if (!hasClass(obj, cn)) {
+                obj.className += " " + cn;
+            }
+        }
+
+        //判断一个元素中是否有class
+        function hasClass(obj, cn) {
+            var reg = new RegExp("\\b" + cn + "\\b");
+            return reg.test(obj.className);
+
+        }
+
+        function removeClass(obj, cn) {
+            var reg = new RegExp("\\b" + cn + "\\b");
+            obj.className = obj.className.replace(reg, "");
+        }
+
+        //有则删除，无则添加
+        function toggleClass(obj, cn) {
+            if (hasClass(obj, cn)) {
+                removeClass(obj, cn);
+            } else {
+                addClass(obj, cn);
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn01">click to modify style of box</button>
+<button id="btn02">click to remove style of box</button>
+<button id="btn03">click to switch style of box</button>
+<br><br>
+<div id="box" class="b1"></div>
+</body>
+</html>

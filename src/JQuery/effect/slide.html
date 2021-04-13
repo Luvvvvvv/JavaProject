@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../JS/jquery-3.6.0.js"></script>
+    <style type="text/css">
+        #panel, #flip, #flip1, #flip2 {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#flip").click(function () {
+                $("#panel").slideDown(1000);
+            });
+            $("#flip1").click(function () {
+                $("#panel").slideUp(1000);
+            });
+            $("#flip2").click(function () {
+                $("#panel").slideToggle(1000);
+            });
+            $("#stop").click(function () {
+                $("#panel").stop();
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="flip">点我滑下面板</div>
+<div id="flip1">点我收起面板</div>
+<div id="flip2">点我滑下/收起面板</div>
+<div id="stop">停止滑下/收起面板</div>
+<div id="panel">Hello world!</div>
+</body>
+</html>

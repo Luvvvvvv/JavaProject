@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../JS/jquery-3.6.0.js"></script>
+    <style type="text/css">
+        #box1 {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            position: relative;
+        }
+
+        #box2 {
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+            position: relative;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#start").click(function () {
+                $("#box1").animate({
+                    top: '+=50px',
+                    left: '+=50px',
+                    width: '+=50px'
+                });
+                $("#txt").animate({fontSize: '50px'});
+                var box2 = $("#box2");
+                box2.animate({width: "200px"});
+                box2.animate({height: "200px"});
+                box2.animate({opacity: "0.5"});
+                box2.animate({left: "100px"});
+                box2.animate({top: "100px"});
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="start">开始动画</button>
+<button id="stop">stop</button>
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。
+    如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<div id="box1"></div>
+<div id="box2"></div>
+<p id="txt" style="position: relative">luv</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+
+            var body = document.body;
+            //html根标签
+            var de = document.documentElement;
+            //所有元素
+            var all = document.all;
+            //根据class属性查询一组元素节点对象
+            var box1 = document.getElementsByClassName("box1");
+            //获取所有div
+            var divs = document.getElementsByTagName("div");
+            //box1.div，根据css选择器查询元素节点对象
+            var qs = document.querySelector(".box1 div");
+            alert(qs.innerHTML);
+        };
+    </script>
+</head>
+<body>
+<div class="box1">
+    <div>123</div>
+</div>
+<div></div>
+<div></div>
+</body>
+</html>

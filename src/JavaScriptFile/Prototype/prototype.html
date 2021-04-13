@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function myClass() {
+
+        }
+
+        myClass.prototype.name = "i\'m a name"
+        var mc = new myClass();
+        mc.age = 18;
+        //检查对象中是否含有该属性
+        alert(mc.hasOwnProperty("name"));
+        alert(mc.hasOwnProperty("age"));
+
+        alert(mc.__proto__.__proto__.__proto__);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

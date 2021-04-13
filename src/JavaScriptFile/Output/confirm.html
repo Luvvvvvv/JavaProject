@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function confirm1() {
+        var x;
+        var r = confirm("click confirm");
+        if (r == true) {
+            x = "you clicked confirm button"
+        } else x = "you clicked cancle button"
+        document.getElementById("me").innerHTML = x;
+    }
+</script>
+<body>
+<button type="button" onclick="confirm1()"></button>
+<p id="me"></p>
+</body>
+</html>

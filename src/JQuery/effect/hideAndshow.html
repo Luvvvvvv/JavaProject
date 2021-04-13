@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../JS/jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $("#text").hide(1000, "linear", function () {
+                    alert("hide");
+                });
+            });
+
+            $("#btn2").click(function () {
+                $("#text").show(1000, "swing", function () {
+                    alert("already showed");
+                });
+            });
+
+            $("#btn3").click(function () {
+                $("p").toggle(3000);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<button id="btn1">click to hide text</button>
+<button id="btn2">click to show text</button>
+<button id="btn3">click to hide/show text</button>
+<p id="text">text</p>
+<p>text text text</p>
+</body>
+</html>

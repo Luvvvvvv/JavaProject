@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo">单击按钮返回5到10之间的最大值。</p>
+<button onclick="myFunction()">点我</button>
+<button onclick="myFunction1()">点我</button>
+<script>
+    function myFunction(){
+        document.getElementById("demo").innerHTML=Math.max(5,10);
+    }
+    function myFunction1(){
+        document.getElementById("demo").innerHTML=Math.min(5,10);
+    }
+</script>
+
+</body>
+</html>
