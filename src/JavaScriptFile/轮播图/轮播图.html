@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 220px;
+            height: 220px;
+            margin: 50px auto;
+            background-color: yellowgreen;
+            padding: 10px 0 0;
+            position: relative;
+
+            /*裁剪溢出内容*/
+            overflow: hidden;
+        }
+
+        #imgList {
+            list-style: none;
+            position: absolute;
+            /*移动220显示下一张*/
+            left: -440px;
+        }
+
+        #imgList li {
+            float: left;
+            margin: 0 10px;
+        }
+
+        #nav {
+            position: absolute;
+            bottom: 0px;
+        }
+
+        #nav a {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            margin: 0 10px;
+            opacity: 0.5;
+        }
+
+        #nav a:hover {
+            background-color: black;
+        }
+    </style>
+    <script>
+        // 设置imgList宽度
+        window.onload = function () {
+            var imgList = document.getElementById("imgList");
+            var imgArr = document.getElementsByTagName("img")
+            imgList.style.width = 220 * imgArr.length + "px";
+
+            //设置导航按钮居中
+            var navDiv = document.getElementById("nav")
+            var outer = document.getElementById("outer")
+            navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth) / 2 + "px";
+
+            //默认显示图片
+            var index = 0;
+
+            //获取a
+            var aAll = document.getElementsByTagName("a");
+
+            //点击显示图片
+            for (var i = 0; i < aAll.length; i++) {
+
+                //为超链接添加属性
+                aAll[i].num = i;
+                aAll[i].onclick = function () {
+                    index = this.num;
+
+                    //切换图片
+                    imgList.style.left = -220 * index + "px";
+                    setA();
+
+                    //使用move函数
+                    // move(imgList, "left", -220 * index, 10, function () {
+                    // });
+                };
+            }
+
+            //设置选中a得效果
+            function setA() {
+                for (var i = 0; i < aAll.length; i++) {
+                    aAll[i].style.backgroundColor = "";
+                }
+                aAll[index].style.backgroundColor = "black";
+            }
+
+        };
+    </script>
+</head>
+<body>
+<!--容器-->
+<div id="outer">
+    <ul id="imgList">
+        <li>
+            <img src="iphone3.png">
+        </li>
+        <li>
+            <img src="iphone4.png">
+        </li>
+        <li>
+            <img src="iphone12.png">
+        </li>
+    </ul>
+    <div id="nav">
+        <a href="javascript:"></a>
+        <a href="javascript:"></a>
+        <a href="javascript:"></a>
+    </div>
+</div>
+</body>
+</html>

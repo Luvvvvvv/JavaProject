@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var sport = document.getElementsByName("sports")
+
+        function checkAllButton() {
+            for (var i = 0; i <= sport.length; i++) {
+                sport[i].checked = true;
+            }
+        }
+
+        function unCheckAllButton() {
+
+            for (var i = 0; i <= sport.length; i++) {
+                sport[i].checked = false;
+            }
+        }
+
+        function reverseCheck() {
+            for (var i = 0; i <= sport.length; i++) {
+                sport[i].checked = !sport[i].checked;
+            }
+        }
+
+        function submit() {
+            for (var i = 0; i <= sport.length; i++) {
+                if (sport[i].checked) {
+                    alert(sport[i].value);
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<form method="post" action="">
+    <input type="checkbox" name="sports" value="football">football
+    <input type="checkbox" name="sports" value="soccer">soccer
+    <input type="checkbox" name="sports" value="tennis">tennis
+    <input type="checkbox" name="sports" value="badminton">badminton
+    <input type="checkbox" name="sports" value="basketball">basketball
+    <input type="checkbox" name="sports" value="pingpong">pingpong
+    <br/>
+</form>
+<button onclick="checkAllButton()" value="全选">全选</button>
+<button onclick="unCheckAllButton()" value="全不选">全不选</button>
+<button onclick="reverseCheck()" value="反选">反选</button>
+<button onclick="submit()" value="提交">提交</button>
+</body>
+</html>
