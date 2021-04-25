@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: rgb(8, 235, 76);
+            width: 100px;
+            height: 100px;
+            float: left;
+            text-align: center;
+            margin-left: 10px;
+            
+        }
+        .box2{
+            font-size: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(255, 94, 0);
+        }
+    </style>
+
+    <script>
+
+
+        setInterval ( function () {
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            }
+
+            function countDownDays(time) {
+                var nowTime = +new Date();
+                var inputTime = +new Date(time);
+                var times = (inputTime - nowTime) / 1000; //换算成s
+                var day = parseInt(times / 60 / 60 / 24);
+                var d = checkTime(day);
+                return d;
+            }
+            var x = countDownDays("2021-4-20  12:00:00");
+            document.getElementById("days").innerHTML = x;
+
+            function countDownHours(time) {
+                var nowTime = +new Date();
+                var inputTime = +new Date(time);
+                var times = (inputTime - nowTime) / 1000; //换算成s
+                var hour = parseInt(times / 60 / 60 % 24);
+                var h = checkTime(hour);
+                return h;
+            }
+            var y = countDownHours("2021-4-20 12:00:00");
+            document.getElementById("hours").innerHTML = y;
+
+            function countDownMin(time) {
+                var nowTime = +new Date();
+                var inputTime = +new Date(time);
+                var times = (inputTime - nowTime) / 1000; //换算成s
+                var min = parseInt(times / 60 % 60);
+                var m = checkTime(min);
+                return m;
+            }
+            var z = countDownMin("2021-4-20 12:00:00");
+            document.getElementById("minutes").innerHTML = z;
+
+            function countDownSec(time) {
+                var nowTime = +new Date();
+                var inputTime = +new Date(time);
+                var times = (inputTime - nowTime) / 1000; //换算成s
+                var sec = parseInt(times % 60);
+                var s = checkTime(sec);
+                return s;
+            }
+            var r = countDownSec("2021-4-20 12:00:00");
+            document.getElementById("seconds").innerHTML = r;
+        },1000);
+    </script>
+
+</head>
+
+<body>
+    <div class="box">天
+        <div class="box2" id="days"></div>
+    </div>
+    <div class="box">时
+        <div class="box2" id="hours"></div>
+    </div>
+    <div class="box">分
+        <div class="box2" id="minutes"></div>
+    </div>
+    <div class="box">秒
+        <div class="box2" id="seconds"></div>
+    </div>
+</body>
+
+</html>

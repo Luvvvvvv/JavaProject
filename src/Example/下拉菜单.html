@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var a1 = document.getElementById('a1');
+            var ul1 = document.getElementById('ul1');
+            a1.addEventListener("mousemove", function () {
+                ul1.style.display = 'block'
+            });
+            ul1.addEventListener("mouseleave", function () {
+                ul1.style.display = 'none'
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <li>
+        <a href="#" id="a1">123</a>
+        <ul id="ul1">
+            <li>
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+        </ul>
+    </li>
+</body>
+
+</html>

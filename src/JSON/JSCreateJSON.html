@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>js create json</h2>
+<p>first website's name is:<span id="span1"></span></p>
+<p>first website's name is modified ,and the name is:<span id="span2"></span></p>
+<script>
+    var site = [{"name": "baidu", "url": "www.badiu.com"},
+        {"name": "google", "url": "www.google.com"},
+        {"name": "weibo", "url": "www.weibo.com"}];
+    document.getElementById('span1').innerHTML=site[0].name;
+    site[0].name="null";
+    document.getElementById('span2').innerHTML=site[0].name;
+</script>
+</body>
+</html>
