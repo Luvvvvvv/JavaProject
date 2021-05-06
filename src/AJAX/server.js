@@ -16,11 +16,23 @@ app.all('/json-server', (request, response) => {
   const data = {
     name: 'luvvhonvv'
   };
-  let str=JSON.stringify(data);
+  let str = JSON.stringify(data);
 
   response.send(str);
 });
 
+
+app.all('/jquery-server', (request, response) => {
+  //设置响应头，允许跨域
+  response.setHeader('Access-Control-Allow-Origin', '*')
+
+  const data = {
+    name: 'luvvhonvv'
+  };
+  let str = JSON.stringify(data);
+
+  response.send(str);
+});
 
 app.listen(8000, () => {
   console.log('服务已启动');
