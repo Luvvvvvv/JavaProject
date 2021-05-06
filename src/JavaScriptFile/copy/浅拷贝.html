@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var obj = {
+    id: 1,
+    name: 'luv',
+    msg: {
+      age: 22
+    }
+  }
+
+  var o = {};
+
+  //浅拷贝，只把obj中的msg对象地址拷贝了过去
+
+  // // 利用for循环拷贝
+  // for (var k in obj) {
+  //   // k属性名，obj[k]属性值
+  //   o[k] = obj[k];
+  // }
+  // o.name = 'hon';
+  // console.log(o);
+  // o.msg.age = 20;
+  // console.log(obj);
+  // console.log('-------------------------');
+
+  // 语法糖
+  Object.assign(o, obj);
+  console.log(o);
+
+</script>
+</body>
+</html>

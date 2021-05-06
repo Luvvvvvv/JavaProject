@@ -14,12 +14,16 @@
   <input type="checkbox" value="篮球" v-model="hobbies">篮球
   <h2>你的爱好：{{hobbies}}</h2>
   <hr>
-
   <label for="agree">
     <input type="checkbox" id="agree" name="agree" v-model="isChecked">同意
   </label>
   <h2>{{isChecked}}</h2>
   <button :disabled="!(isChecked)">下一步</button>
+
+  <label :for="item" v-for="item in originHobbies">
+    <input type="checkbox" :value="item" :id="item" v-model="hobbies">{{item}}
+  </label>
+
 </div>
 <script>
   const app = new Vue({
@@ -27,7 +31,8 @@
     data: {
       message: 'hello',
       isChecked: false,
-      hobbies: []
+      hobbies: [],
+      originHobbies: ['足球', '篮球', '羽毛球', '乒乓球', '台球', '壁球']
     },
     methods: {}
   })

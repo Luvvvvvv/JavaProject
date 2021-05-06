@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var obj = {
+    id: 1,
+    name: 'luv',
+    msg: {
+      age: 22
+    },
+    color: ['red', 'blue', 'green']
+  }
+
+  var o = {};
+
+  function deepCopy(newobj, oldobj) {
+    for (var k in oldobj) {
+      var item = oldobj[k];
+      //判断是否为数组，数组也是对象，所以要先判断数组
+      if (item instanceof Array) {
+        newobj[k] = [];
+        deepCopy(newobj[k], item)
+      } else if (item instanceof Object) {
+        newobj[k] = {};
+        deepCopy(newobj[k], item)
+      } else {
+        newobj[k] = item
+      }
+    }
+  }
+
+  deepCopy(o, obj);
+
+  o.msg.age = 18;
+  console.log(o);
+  console.log(obj);
+</script>
+</body>
+</html>
